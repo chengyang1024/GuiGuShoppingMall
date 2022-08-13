@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>shoppingMall-menber</module>
+        <module>shoppingMall-member</module>
         <module>shoppingMall-coupon</module>
         <module>shoppingMall-order</module>
         <module>shoppingmall-product</module>

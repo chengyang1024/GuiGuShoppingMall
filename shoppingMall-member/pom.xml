@@ -11,8 +11,8 @@
     <groupId>com.chengy</groupId>
     <artifactId>member</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>shoppingMall-menber</name>
-    <description>shoppingMall-menber</description>
+    <name>shoppingMall-member</name>
+    <description>shoppingMall-member</description>
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>2021.0.3</spring-cloud.version>
