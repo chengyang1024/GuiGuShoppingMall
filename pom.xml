@@ -12,7 +12,7 @@
         <module>shoppingMall-member</module>
         <module>shoppingMall-coupon</module>
         <module>shoppingMall-order</module>
-        <module>shoppingmall-product</module>
+        <module>shoppingMall-product</module>
         <module>shoppingMall-ware</module>
     </modules>
 
