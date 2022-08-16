@@ -5,7 +5,13 @@ spring:
     username: root
     password: pass123456
     driver-class-name: com.mysql.jdbc.Driver
-
+  #nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: order
 
 mybatis-plus:
   # 配置sql.xml路径
