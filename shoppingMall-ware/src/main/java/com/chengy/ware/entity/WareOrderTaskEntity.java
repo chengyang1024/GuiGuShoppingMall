@@ -8,11 +8,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 搴撳瓨宸ヤ綔鍗�
+ * 库存工作单
  * 
  * @author chengy
  * @email 1061332369@qq.com
- * @date 2022-08-15 23:33:51
+ * @date 2022-08-16 14:44:55
  */
 @Data
 @TableName("wms_ware_order_task")
@@ -33,35 +33,35 @@ public class WareOrderTaskEntity implements Serializable {
 	 */
 	private String orderSn;
 	/**
-	 * 鏀惰揣浜�
+	 * 收货人
 	 */
 	private String consignee;
 	/**
-	 * 鏀惰揣浜虹數璇�
+	 * 收货人电话
 	 */
 	private String consigneeTel;
 	/**
-	 * 閰嶉€佸湴鍧€
+	 * 配送地址
 	 */
 	private String deliveryAddress;
 	/**
-	 * 璁㈠崟澶囨敞
+	 * 订单备注
 	 */
 	private String orderComment;
 	/**
-	 * 浠樻鏂瑰紡銆� 1:鍦ㄧ嚎浠樻 2:璐у埌浠樻銆�
+	 * 付款方式【 1:在线付款 2:货到付款】
 	 */
 	private Integer paymentWay;
 	/**
-	 * 浠诲姟鐘舵€�
+	 * 任务状态
 	 */
 	private Integer taskStatus;
 	/**
-	 * 璁㈠崟鎻忚堪
+	 * 订单描述
 	 */
 	private String orderBody;
 	/**
-	 * 鐗╂祦鍗曞彿
+	 * 物流单号
 	 */
 	private String trackingNo;
 	/**
@@ -69,11 +69,11 @@ public class WareOrderTaskEntity implements Serializable {
 	 */
 	private Date createTime;
 	/**
-	 * 浠撳簱id
+	 * 仓库id
 	 */
 	private Long wareId;
 	/**
-	 * 宸ヤ綔鍗曞娉�
+	 * 工作单备注
 	 */
 	private String taskComment;
 

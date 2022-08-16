@@ -8,11 +8,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 浠撳簱淇℃伅
+ * 仓库信息
  * 
  * @author chengy
  * @email 1061332369@qq.com
- * @date 2022-08-15 23:33:51
+ * @date 2022-08-16 14:44:55
  */
 @Data
 @TableName("wms_ware_info")
@@ -25,15 +25,15 @@ public class WareInfoEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * 浠撳簱鍚�
+	 * 仓库名
 	 */
 	private String name;
 	/**
-	 * 浠撳簱鍦板潃
+	 * 仓库地址
 	 */
 	private String address;
 	/**
-	 * 鍖哄煙缂栫爜
+	 * 区域编码
 	 */
 	private String areacode;
 

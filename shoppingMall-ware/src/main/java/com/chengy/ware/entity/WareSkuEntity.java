@@ -8,11 +8,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 鍟嗗搧搴撳瓨
+ * 商品库存
  * 
  * @author chengy
  * @email 1061332369@qq.com
- * @date 2022-08-15 23:33:51
+ * @date 2022-08-16 14:44:55
  */
 @Data
 @TableName("wms_ware_sku")
@@ -29,11 +29,11 @@ public class WareSkuEntity implements Serializable {
 	 */
 	private Long skuId;
 	/**
-	 * 浠撳簱id
+	 * 仓库id
 	 */
 	private Long wareId;
 	/**
-	 * 搴撳瓨鏁�
+	 * 库存数
 	 */
 	private Integer stock;
 	/**
@@ -41,7 +41,7 @@ public class WareSkuEntity implements Serializable {
 	 */
 	private String skuName;
 	/**
-	 * 閿佸畾搴撳瓨
+	 * 锁定库存
 	 */
 	private Integer stockLocked;
 

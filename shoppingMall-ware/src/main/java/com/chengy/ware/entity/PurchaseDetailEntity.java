@@ -13,7 +13,7 @@ import lombok.Data;
  * 
  * @author chengy
  * @email 1061332369@qq.com
- * @date 2022-08-15 23:33:51
+ * @date 2022-08-16 14:44:55
  */
 @Data
 @TableName("wms_purchase_detail")
@@ -26,27 +26,27 @@ public class PurchaseDetailEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * 閲囪喘鍗昳d
+	 * 采购单id
 	 */
 	private Long purchaseId;
 	/**
-	 * 閲囪喘鍟嗗搧id
+	 * 采购商品id
 	 */
 	private Long skuId;
 	/**
-	 * 閲囪喘鏁伴噺
+	 * 采购数量
 	 */
 	private Integer skuNum;
 	/**
-	 * 閲囪喘閲戦
+	 * 采购金额
 	 */
 	private BigDecimal skuPrice;
 	/**
-	 * 浠撳簱id
+	 * 仓库id
 	 */
 	private Long wareId;
 	/**
-	 * 鐘舵€乕0鏂板缓锛�1宸插垎閰嶏紝2姝ｅ湪閲囪喘锛�3宸插畬鎴愶紝4閲囪喘澶辫触]
+	 * 状态[0新建，1已分配，2正在采购，3已完成，4采购失败]
 	 */
 	private Integer status;
 

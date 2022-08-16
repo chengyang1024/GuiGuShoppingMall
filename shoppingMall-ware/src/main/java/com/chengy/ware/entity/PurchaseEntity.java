@@ -9,11 +9,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 閲囪喘淇℃伅
+ * 采购信息
  * 
  * @author chengy
  * @email 1061332369@qq.com
- * @date 2022-08-15 23:33:51
+ * @date 2022-08-16 14:44:55
  */
 @Data
 @TableName("wms_purchase")
