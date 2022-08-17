@@ -31,6 +31,11 @@ public class GrowthChangeHistoryController {
     @Autowired
     private GrowthChangeHistoryService growthChangeHistoryService;
 
+    @RequestMapping("/test")
+    public R test(){
+        return R.ok().put("name", "程阳");
+    }
+
     /**
      * 列表
      */

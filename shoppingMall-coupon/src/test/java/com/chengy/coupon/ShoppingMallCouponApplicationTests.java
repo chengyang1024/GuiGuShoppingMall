@@ -1,6 +1,9 @@
 package com.chengy.coupon;
 
+import com.chengy.common.utils.R;
+import com.chengy.coupon.controller.CouponController;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
@@ -9,6 +12,9 @@ import java.util.stream.Collectors;
 
 @SpringBootTest
 class ShoppingMallCouponApplicationTests {
+
+    @Autowired
+    CouponController couponController;
 
     @Test
     void contextLoads() {
@@ -34,9 +40,21 @@ class ShoppingMallCouponApplicationTests {
         List<User> collect = userList.stream().filter(item -> userList2.contains(item)).collect(Collectors.toList());
         System.out.println("---交集 intersection---");
         System.out.println(collect);
+    }
 
+    @Test
+    public void testFeign(){
+        R r = couponController.testFeign();
+        System.out.println(r);
+    }
 
-
+    /**
+     * 测试动态获取配置文件
+     */
+    @Test
+    public void testProperties(){
+        R r = couponController.testProperties();
+        System.out.println(r);
     }
 
 }

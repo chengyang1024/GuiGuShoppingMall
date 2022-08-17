@@ -1,0 +1,37 @@
+#定义端口
+server:
+  port: 7001
+spring:
+  # 配置数据源
+  datasource:
+    url: jdbc:mysql://118.31.168.90:3306/shoppingMall_sms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: chengy
+    password: pass123456
+    driver-class-name: com.mysql.jdbc.Driver
+  #nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: dev #配置命名空间
+        group: DEFAULT_GROUP
+        #nacos在properties中配置不生效
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        group: ${spring.cloud.nacos.discovery.group}
+        file-extension: yml #nacos上的配置文件类型，不写默认是properties
+  application:
+    name: couponService #服务名：优惠卷服务
+
+
+
+mybatis-plus:
+  # 配置sql.xml路径
+  mapperLocations: classpath:mapper/**/*.xml
+  # 主键自增
+  global-config:
+    db-config:
+      id-type: auto
+
+

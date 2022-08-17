@@ -6,7 +6,11 @@ import java.util.Map;
 
 import com.chengy.common.utils.PageUtils;
 import com.chengy.common.utils.R;
+import com.chengy.coupon.feign.MemberFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,11 +30,40 @@ import com.chengy.coupon.service.CouponService;
  * @email 1061332369@qq.com
  * @date 2022-08-15 23:00:44
  */
+@Component
+@RefreshScope//nacos配置自动刷新
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
+    @Autowired
+    private MemberFeignService memberFeignService;
+
+
+    @Value("${coupon.user.name}")
+    private String name;
+    @Value("${coupon.user.age}")
+    private int age;
+    /**
+     * 测试properties动态获取
+     * @return
+     */
+    @RequestMapping("/testProperties")
+    public R testProperties(){
+        return R.ok().put("name",name).put("age",age);
+    }
+
+    /**
+     * 测试feign调用
+     * @return
+     */
+    @RequestMapping("/testFeign")
+    public R testFeign(){
+        R test = memberFeignService.test();
+        String name = test.get("name").toString();
+        return R.ok().put("coupon","优惠信息").put("name",name);
+    }
 
     /**
      * 列表
