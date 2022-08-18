@@ -1,6 +1,6 @@
-#定义端口
 server:
-  port: 7001
+  port: 9001
+# 配置数据源
 spring:
   #nacos
   cloud:
@@ -15,10 +15,7 @@ spring:
         group: ${spring.cloud.nacos.discovery.group}
         file-extension: yml #nacos上的配置文件类型，不写默认是properties
   application:
-    name: couponService #服务名：优惠卷服务
-
-
-
+    name: orderService
 
 
 
