@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @author Mark sunlightcs@gmail.com
  * @since 2018-07-24
  */
-@Mapper
+//@Mapper
 public interface SQLServerGeneratorDao extends GeneratorDao {
 
 }

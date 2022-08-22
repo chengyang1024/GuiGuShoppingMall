@@ -2,7 +2,8 @@ package com.chengy.coupon;
 
 import com.chengy.common.utils.R;
 import com.chengy.coupon.controller.CouponController;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 

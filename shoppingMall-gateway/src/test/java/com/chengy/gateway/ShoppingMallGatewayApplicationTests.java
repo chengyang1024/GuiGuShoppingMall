@@ -1,11 +1,11 @@
-package com.chengy.ware;
+package com.chengy.gateway;
 
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WareApplicationTests {
+class ShoppingMallGatewayApplicationTests {
 
     @Test
     void contextLoads() {

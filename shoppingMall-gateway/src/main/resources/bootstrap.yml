@@ -1,0 +1,46 @@
+#定义端口
+server:
+  port: 88
+spring:
+  application:
+    name: gatewayService
+  #nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: dev #配置命名空间
+        group: DEFAULT_GROUP
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        group: ${spring.cloud.nacos.discovery.group}
+        file-extension: yml #nacos上的配置文件类型，不写默认是properties
+    gateway: #配置gateway
+      routes: # 路由规则
+        - id: test1
+          uri: http://www.qq.com
+#          filters:
+          predicates: # 断言
+            - Query=url,baidu #配置断言 ，满足参数中存在url:baidu，就转发到上面uri的
+        - id: test2
+          uri: http://www.baidu.com
+#          filters:
+          predicates:
+            - Query=url,qq
+        - admin_route:
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+
+
+
+
+
+
+
+
+
+
+
+
