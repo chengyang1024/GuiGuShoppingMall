@@ -6,7 +6,7 @@ server:
     min-spare-threads: 30
   port: 8080
   servlet:
-    context-path: /renren-fast
+    context-path: /renrenService
   netty:
     connection-timeout: 5000ms
 

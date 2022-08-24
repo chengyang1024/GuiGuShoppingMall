@@ -1,0 +1,14 @@
+spring:
+#  main:
+#    allow-circular-references: true #用来解决循环依赖
+  application:
+    name: renren-Service
+  #配置nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: dev #配置命名空间
+#      config:
+#        namespace: dev
+#        server-addr: localhost:8848

@@ -10,11 +10,9 @@ spring:
       discovery:
         server-addr: localhost:8848
         namespace: dev #配置命名空间
-        group: DEFAULT_GROUP
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
         namespace: ${spring.cloud.nacos.discovery.namespace}
-        group: ${spring.cloud.nacos.discovery.group}
         file-extension: yml #nacos上的配置文件类型，不写默认是properties
     gateway: #配置gateway
       routes: # 路由规则
@@ -29,9 +27,12 @@ spring:
           predicates:
             - Query=url,qq
         - admin_route:
-          uri: lb://renren-fast
+          uri: lb://renren-Service #服务名
           predicates:
             - Path=/api/**
+          filters:
+            # 路径替换：http://locaohost:88/api/**.jpg    -->  http://localhost:8080/renren-fast/**.jpg
+            - RewritePath=/api/(?<segment>.*), /renrenService/$\{segment}
 
 
 
