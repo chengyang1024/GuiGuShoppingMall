@@ -1,7 +1,9 @@
 package com.chengy.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 import com.chengy.common.utils.PageUtils;
@@ -41,6 +43,12 @@ public class CategoryController {
         PageUtils page = categoryService.queryPage(params);
 
         return R.ok().put("page", page);
+    }
+
+    @RequestMapping("/list/tree")
+    public R listTree(){
+        List<CategoryEntity> entities= categoryService.queryTree();
+        return R.ok().put("listTree", entities);
     }
 
 

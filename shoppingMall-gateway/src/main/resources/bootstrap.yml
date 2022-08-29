@@ -26,15 +26,21 @@ spring:
 #          filters:
           predicates:
             - Query=url,qq
-        - admin_route:
+
+        - id: product_route
+          uri: lb://productService
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /$\{segment}
+
+        - id: admin_route
           uri: lb://renren-Service #服务名
           predicates:
             - Path=/api/**
           filters:
             # 路径替换：http://locaohost:88/api/**.jpg    -->  http://localhost:8080/renren-fast/**.jpg
             - RewritePath=/api/(?<segment>.*), /renrenService/$\{segment}
-
-
 
 
 
