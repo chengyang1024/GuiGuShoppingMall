@@ -64,4 +64,17 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         return children;
     }
 
+
+    /**
+     * mybatisplus 逻辑删除(实体类加@TableLogic)
+     *
+     * @param asList
+     * @return
+     */
+    @Override
+    public int removeMenusByIds(List<Long> asList) {
+        //todo 检查当前菜单是否被别的地方引用
+        return baseMapper.deleteBatchIds(asList);
+    }
+
 }
