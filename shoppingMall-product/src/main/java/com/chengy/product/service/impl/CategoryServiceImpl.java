@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -50,18 +51,15 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
     private List<CategoryEntity> getChildrens(CategoryEntity entity, List<CategoryEntity> all) {
 
-        List<CategoryEntity> children = all.stream().filter(categoryEntity -> {
-            return categoryEntity.getParentCid() == entity.getCatId();
-        }).map(categoryEntity -> {
+        return all.stream().filter(categoryEntity -> {
+            return categoryEntity.getParentCid().equals(entity.getCatId());
+        }).peek(categoryEntity -> {
             //1、找到子菜单
             categoryEntity.setChildrens(getChildrens(categoryEntity,all));
-            return categoryEntity;
         }).sorted((menu1,menu2)->{
             //2、菜单的排序
             return (menu1.getSort()==null?0:menu1.getSort()) - (menu2.getSort()==null?0:menu2.getSort());
         }).collect(Collectors.toList());
-
-        return children;
     }
 
 
